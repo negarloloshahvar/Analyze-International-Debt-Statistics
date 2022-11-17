@@ -13,12 +13,40 @@ we are going to find the answers to questions like:
 The data used in this project is provided by The World Bank. It contains both national and regional debt statistics for several countries across the globe as recorded from 1970 to 2015.
 
 ## Project Tasks
-1. The World Bank's international debt data
-2. Finding the number of distinct countries
-3. Finding out the distinct debt indicators
-4. Totaling the amount of debt owed by the countries
-5. Country with the highest debt
-6. Average amount of debt across indicators
-7. The highest amount of principal repayments
-8. The most common debt indicator
-9. Other viable debt issues and conclusion
+### 1. The World Bank's international debt data
+
+```
+SELECT *
+FROM international_debt
+LIMIT 10;
+```
+
+### 2. Finding the number of distinct countries
+
+```
+SELECT COUNT(DISTINCT country_name)
+    AS total_distinct_countries
+FROM international_debt;
+```
+
+### 3. Finding out the distinct debt indicators
+
+```
+SELECT COUNT(DISTINCT country_name)
+    AS total_distinct_countries
+FROM international_debt;
+```
+
+### 4. Totaling the amount of debt owed by the countries
+
+```
+SELECT 
+    ROUND(SUM(debt)/1000000 ,2)  AS total_debt
+FROM international_debt; 
+```
+
+### 5. Country with the highest debt
+### 6. Average amount of debt across indicators
+### 7. The highest amount of principal repayments
+### 8. The most common debt indicator
+### 9. Other viable debt issues and conclusion
