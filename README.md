@@ -83,4 +83,28 @@ WHERE debt = (SELECT
 ```
 
 ### 8. The most common debt indicator
+
+```
+SELECT
+        indicator_code,
+        COUNT(indicator_code) AS indicator_count
+FROM international_debt
+GROUP BY indicator_code
+ORDER BY indicator_count DESC, indicator_code DESC
+LIMIT 20;
+```
+
 ### 9. Other viable debt issues and conclusion
+```
+SELECT country_name, MAX(debt) AS maximum_debt
+FROM international_debt
+GROUP BY country_name
+ORDER BY maximum_debt DESC
+LIMIT 10;
+```
+
+### Project Insights
+We can see that the indicator DT.AMT.DLXF.CD tops the chart of average debt. This category includes repayment of long term debts.
+An interesting observation in the above finding is that there is a huge difference in the amounts of the indicators after the second one. This indicates that the first two indicators might be the most severe categories in which the countries owe their debts.
+China has the highest amount of debt in the long-term debt (DT.AMT.DLXF.CD) category. This is verified by The World Bank.
+In this project, we took a look at debt owed by countries across the globe. We extracted a few summary statistics from the data and unraveled some interesting facts and figures. We also validated our findings to make sure the investigations are correct.
